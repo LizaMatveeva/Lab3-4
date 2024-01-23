@@ -25,8 +25,13 @@ public class Joan extends Person implements Temperature {
         joanThought.add(message);
     }
     @Override
-    public void takeOffTemperature(Patient patient) throws Exception {
-        int temperatureOfPatient = patient.measureTemperature(thermometr);
+    public void takeOffTemperature(Patient patient){
+        int temperatureOfPatient = 0;
+        try {
+            temperatureOfPatient = patient.measureTemperature(thermometr);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         if (temperatureOfPatient>= 36.0 && temperatureOfPatient <= 37.5){
             System.out.printf("Пациентка здорова.\n", name);
         }

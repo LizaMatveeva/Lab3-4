@@ -2,5 +2,5 @@ package interfaces;
 import people.*;
 
 public interface Temperature {
-    void takeOffTemperature(Patient patient) throws Exception;
+    void takeOffTemperature(Patient patient);
 }

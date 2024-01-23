@@ -9,8 +9,8 @@ public class Hospital {
     }
     public Ward ward = new Ward ("палата", 1);
     public class Ward {
-        boolean openWard = false;
         final int bedCount = 15;
+        boolean openWard;
         private String name;
         int wardNumber;
         public Ward (String name, int wardNumber){
@@ -35,7 +35,7 @@ public class Hospital {
     }
     public OperatingRoom operatingRoom = new OperatingRoom("операционная");
     public class OperatingRoom {
-        boolean openOperatingRoom = false;
+        boolean openOperatingRoom;
         private String name;
         public OperatingRoom (String name){
             this.name = name;

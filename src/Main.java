@@ -8,7 +8,7 @@ import people.*;
 
 public class Main implements Function {
 
-    public static void main (String[] args) throws Exception {
+    public static void main (String[] args) {
         Thermometr thermometr = new Thermometr();
         Luice luice = new Luice("Луис", "доктор");
         Doctor doctor = new Doctor("Доктор");
@@ -48,11 +48,14 @@ public class Main implements Function {
         hospital.ward.openWard(DoorState.OPEN);
         luice.go(1, Place.WARD);
         joan.arm.takeSubject(joan.arm.getSubjectCount(), Subjects.THERMOMETR);
-        joan.takeOffTemperature(patient);
+        try {joan.takeOffTemperature(patient);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         joan.arm.takeSubject(joan.arm.getSubjectCount(),Subjects.THERMOMETR);
 
         stiv.arm.takeSubject(stiv.arm.getSubjectCount(), Subjects.DRIVE_BOOK);
-        ambulanceCar.ambulanceCarDrive();
+        ambulanceCar.ambulanceCarDriveBook();
 
 
         int randomhealthy = Function.function(2);

@@ -6,6 +6,6 @@ public abstract class Person extends Human{
         super(post);
         this.name = name;
     }
-    abstract void getThought (int numberMassiv);
-    abstract void addThought(String message);
+    public abstract void getThought(int numberMassiv);
+    public abstract void addThought(String message);
 }

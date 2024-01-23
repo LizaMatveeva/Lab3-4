@@ -7,10 +7,14 @@ import java.util.Random;
 import java.util.concurrent.Callable;
 
 public class Thermometr {
-    public int takeTemperature(Human human) throws Exception {
+    public int takeTemperature(Human human){
         Random randomGenerator = new Random(human.hashCode()); // генерация рандомизатора, в качестве seed числа испоьзуется hashCode человека
         Callable<Double> function = randomGenerator::nextDouble; // для Передачи нашей функции рандома используем функциональный интерфейс
-        return ((Function.customRandom(function, 5) + 35) + ((int) errorRate())); // генерируем рандмную темпеатуру
+        try {
+            return ((Function.customRandom(function, 5) + 35) + ((int) errorRate())); // генерируем рандмную темпеатуру
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
     public double errorRate () {
         double errorRate;

@@ -1,4 +1,5 @@
 package interfaces;
+
 import enums.*;
 
 public interface CarSpeed {

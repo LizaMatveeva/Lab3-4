@@ -4,20 +4,25 @@ import enums.*;
 import transport.Motorbike;
 
 
-public class Motorbiker extends Human{
-    public Motorbiker (String post){
+public class Motorbiker extends Human {
+    public Motorbiker(String post) {
         super(post);
     }
-    public void driveDush (Motorbike motorbike){
+
+    public void driveDush(Motorbike motorbike) {
         motorbike.dush();
     }
+
     public Hands hands = new Hands();
+
     public class Hands {
         protected HandsPositions positions = HandsPositions.OMMITED;
+
         public void setStateHands(HandsPositions positions) {
             this.positions = positions;
         }
-        public void waveHand(){
+
+        public void waveHand() {
             setStateHands(HandsPositions.RAISED);
             setStateHands(HandsPositions.WAVE);
             setStateHands(HandsPositions.OMMITED);

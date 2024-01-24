@@ -59,10 +59,6 @@ public class Main implements Function {
 
 
         int randomhealthy = Function.function(2);
-//        try {patient.ill(randomhealthy);}
-//        catch (HealthyException ex){
-//            System.out.println(ex.getMessage());
-//        }
         patient.ill(randomhealthy);
         boolean stateAmbulanceCar = patient.getIll();
         doctor.takePatient(stateAmbulanceCar,  hospital);
